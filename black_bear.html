@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brown Bear — Field Study</title>
+  <title>Black Bear — Field Study</title>
   <link href=
   "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" 
    rel="stylesheet">
@@ -30,7 +30,6 @@
       min-height: 100vh;
     }
 
-    /* ── Progress ── */
     #prog {
       position: fixed; top: 0; left: 0;
       width: 0%; height: 2px;
@@ -39,7 +38,6 @@
       transition: width 0.1s linear;
     }
 
-    /* ── Header ── */
     header {
       border-bottom: 1px solid var(--ink-faint);
       padding: 28px 40px;
@@ -67,14 +65,12 @@
       letter-spacing: 0.1em;
     }
 
-    /* ── Main Layout ── */
     main {
       display: grid;
       grid-template-columns: 280px 1fr;
       min-height: calc(100vh - 65px);
     }
 
-    /* ── Sidebar ── */
     aside {
       border-right: 1px solid var(--ink-faint);
       padding: 40px 28px;
@@ -110,7 +106,6 @@
       border-bottom: 1px solid var(--ink-faint);
     }
 
-    /* Status pill */
     .status {
       display: inline-flex;
       align-items: center;
@@ -135,7 +130,6 @@
       box-shadow: 0 0 6px #d8444480;
     }
 
-    /* Habitats */
     .habitat-list {
       list-style: none;
       padding: 0; margin: 0;
@@ -199,7 +193,6 @@
       background: var(--surface-2);
     }
 
-    /* ── Content Area ── */
     section.content {
       padding: 40px 48px;
       display: flex;
@@ -207,7 +200,6 @@
       gap: 48px;
     }
 
-    /* About block */
     .about-block p {
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
@@ -227,97 +219,36 @@
       margin: 0 0 18px;
     }
 
-    /* Species accordion */
-    .species-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border: 1px solid var(--ink-faint);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .species-item {
-      border-bottom: 1px solid var(--ink-faint);
-      cursor: pointer;
-    }
-    .species-item:last-child { border-bottom: none; }
-    .species-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
-      transition: background 0.2s;
-    }
-    .species-item:hover .species-header { background: var(--surface-2); }
-    .species-name { font-size: 0.85rem; }
-    .species-latin { font-size: 0.7rem; color: var(--ink-dim); font-style: italic; }
-    .species-arrow {
-      font-size: 0.7rem;
-      color: var(--ink-dim);
-      transition: transform 0.25s, color 0.2s;
-    }
-    .species-item.open .species-arrow {
-      transform: rotate(90deg);
-      color: var(--amber);
-    }
-    .species-desc {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      font-size: 0.78rem;
-      color: var(--ink-dim);
-      line-height: 1.6;
-      padding: 0 20px;
-      background: var(--surface);
-    }
-    .species-item.open .species-desc {
-      max-height: 80px;
-      padding: 12px 20px 16px;
-    }
-
-    /* Media */
-    .media-grid {
+    .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 24px;
     }
-    .media-item {
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--ink-faint);
-      background: var(--surface);
-      position: relative;
-    }
-    .media-item img,
-    .media-item video {
-      width: 100%;
-      display: block;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-    }
-    .media-item video { aspect-ratio: 16/9; }
-    .media-caption {
-      padding: 8px 12px;
-      font-size: 0.65rem;
-      color: var(--ink-dim);
-      letter-spacing: 0.08em;
+    .info-block h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      border-top: 1px solid var(--ink-faint);
+      color: var(--amber);
+      margin: 0 0 8px;
+    }
+    .info-block p {
+      font-size: 0.8rem;
+      color: var(--ink-dim);
+      line-height: 1.6;
+      margin: 0;
     }
 
-    /* Divider */
     hr {
       border: none;
       border-top: 1px solid var(--ink-faint);
       margin: 0;
     }
 
-    /* ── Responsive ── */
     @media (max-width: 720px) {
       main { grid-template-columns: 1fr; }
       aside { border-right: none; border-bottom: 1px solid var(--ink-faint); padding: 28px 20px; }
       section.content { padding: 28px 20px; }
-      .media-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
       header { padding: 20px; }
     }
   </style>
@@ -328,16 +259,15 @@
 
 <header>
   <span class="header-tag">Field Record</span>
-  <h2 class="header-title">Ursidae / Brown Bear</h2>
-  <span class="header-id">REF #0042</span>
+  <h2 class="header-title">Ursidae / Black Bear</h2>
+  <span class="header-id">REF #0044</span>
 </header>
 
 <main>
-  <!-- ── Sidebar ── -->
   <aside>
     <div>
-      <h1 class="hero-title">Brown<br>Bear</h1>
-      <p class="hero-subtitle">Ursus arctos</p>
+      <h1 class="hero-title">Black<br>Bear</h1>
+      <p class="hero-subtitle">Ursus americanus</p>
     </div>
 
     <div class="sidebar-block">
@@ -348,70 +278,60 @@
     <div class="sidebar-block">
       <h3>Primary Habitats</h3>
       <ul class="habitat-list">
-        <li data-n="01"><strong>Russia</strong></li>
-        <li data-n="02"><strong>United States</strong></li>
-        <li data-n="03"><strong>Canada</strong></li>
+        <li data-n="01"><strong>North America</strong></li>
+        <li data-n="02"><strong>Forests</strong></li>
+        <li data-n="03"><strong>Mountain Regions</strong></li>
       </ul>
     </div>
 
     <div class="contents-block">
       <h3>Contents</h3>
       <ul class="contents-list">
-        <li><a href="BearWebsite.html" class="active">Brown Bear</a></li>
+        <li><a href="BearWebsite.html">Brown Bear</a></li>
         <li><a href="polar_bear.html">Polar Bear</a></li>
-        <li><a href="black_bear.html">Black Bear</a></li>
+        <li><a href="black_bear.html" class="active">Black Bear</a></li>
         <li><a href="panda.html">Giant Panda</a></li>
         <li><a href="koala.html">Koala</a></li>
       </ul>
     </div>
   </aside>
 
-  <!-- ── Content ── -->
   <section class="content">
-
     <div class="about-block">
       <p class="section-label">Overview</p>
       <p>
-        The brown bear (<em>Ursus arctos</em>) is a large bear species native to northern
-        Eurasia and North America. Among the largest living terrestrial carnivores, it is
-        presently listed as <strong>Least Concern</strong> by the IUCN.
+        The black bear (<em>Ursus americanus</em>) is a medium-sized bear species native to North America. 
+        Despite its name, individuals range in color from black to white or cream. Listed as <strong>Least 
+        Concern</strong>, it is the most common bear species in North America and well-adapted to diverse 
+        forest environments.
       </p>
     </div>
 
     <hr>
 
     <div>
-      <p class="section-label">Subspecies</p>
-      <div class="species-grid">
-        <div class="species-item" onclick="toggleSpecies(this)">
-          <div class="species-header">
-            <div>
-              <div class="species-name">Arctos</div>
-              <div class="species-latin">Ursus arctos arctos</div>
-            </div>
-            <span class="species-arrow">›</span>
-          </div>
-          <div class="species-desc">The Eurasian brown bear — the nominate subspecies, found across a broad range from Western Europe through Russia.</div>
+      <p class="section-label">Characteristics</p>
+      <div class="info-grid">
+        <div class="info-block">
+          <h4>Physical Traits</h4>
+          <p>Medium-sized bear weighing 40-135 kg. Distinctive straight snout and rounded ears. 
+          Excellent tree climbers, especially younger individuals. Color varies from black, brown, 
+          cinnamon to blonde, independent of species name.</p>
         </div>
-        <div class="species-item" onclick="toggleSpecies(this)">
-          <div class="species-header">
-            <div>d
-              <div class="species-name">Horribilis</div>aaa
-              <div class="species-latin">Ursus arctos horribilis</div>
-            </div>
-            <span class="species-arrow">›</span>
-          </div>
-          <div class="species-desc">The North American grizzly bear — known for its pronounced shoulder hump and formidable size in interior regions of Alaska and Canada.</div>
+        <div class="info-block">
+          <h4>Diet & Foraging</h4>
+          <p>Omnivorous diet includes berries, nuts, roots, insects, and occasionally fish and small mammals. 
+          Spend significant time foraging for vegetation. Can alter diet based on seasonal availability.</p>
         </div>
-        <div class="species-item" onclick="toggleSpecies(this)">
-          <div class="species-header">
-            <div>
-              <div class="species-name">Nelsoni</div>
-              <div class="species-latin">Ursus arctos nelsoni</div>
-            </div>
-            <span class="species-arrow">›</span>
-          </div>
-          <div class="species-desc">The Mexican grizzly bear — now extinct. Last confirmed sighting in 1964. Historically inhabited the Sierra Madre highlands of northern Mexico.</div>
+        <div class="info-block">
+          <h4>Habitat & Range</h4>
+          <p>Found throughout forests of North America from Canada to northern Mexico. Require large home ranges 
+          for foraging. Adaptable to various forest types including deciduous, coniferous, and mixed forests.</p>
+        </div>
+        <div class="info-block">
+          <h4>Behavior</h4>
+          <p>Generally solitary and avoid humans. Incredible sense of smell, used to locate food sources. 
+          Hibernate during winter months, mothers giving birth during hibernation to 1-3 cubs annually.</p>
         </div>
       </div>
     </div>
@@ -419,39 +339,23 @@
     <hr>
 
     <div>
-      <p class="section-label">Observations</p>
-      <div class="media-grid">
-        <div class="media-item">
-          <img src="https://content.codecademy.com/courses/web-101/web101-image_brownbear.jpg" alt="A Brown Bear in its natural habitat">
-          <div class="media-caption">Photograph · Still</div>
-        </div>
-        <div class="media-item">
-          <video controls> 
-            <source src="https://content.codecademy.com/courses/freelance-1/unit-1/lesson-2/htmlcss1-vid_brown-bear.mp4" type="video/mp4">
-            Video not supported
-          </video>
-          <div class="media-caption">Field Recording · Video</div>
-        </div>
-      </div>
+      <p class="section-label">Human Interaction</p>
+      <p style="font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink-dim); 
+      line-height: 1.8; max-width: 560px; margin: 0;">
+        Black bears have shown remarkable capacity to coexist with humans. Conflicts often occur when human 
+        settlements encroach on habitat or improper food storage attracts bears. Education and proper waste 
+        management reduce human-bear conflicts.
+      </p>
     </div>
-
   </section>
 </main>
 
 <script>
-  // Scroll progress
   window.addEventListener('scroll', () => {
     const scrolled = document.documentElement.scrollTop;
     const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     document.getElementById('prog').style.width = (scrolled / total * 100) + '%';
   });
-
-  // Species accordion
-  function toggleSpecies(el) {
-    const isOpen = el.classList.contains('open');
-    document.querySelectorAll('.species-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) el.classList.add('open');
-  }
 </script>
 
 </body>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildlife Field Study — Contents</title>
+  <link href=
+  "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" 
+   rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0b09;
+      --surface: #131210;
+      --surface-2: #1a1915;
+      --ink: #e8e0d0;
+      --ink-dim: #7a7060;
+      --ink-faint: #2e2b25;
+      --amber: #d08f2d;
+      --amber-dim: #7a5520;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--ink-faint);
+      padding: 28px 40px;
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+    }
+    .header-tag {
+      font-size: 0.65rem;
+      color: var(--amber);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .header-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--ink-dim);
+      margin: 0;
+    }
+
+    main {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contents-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0 0 40px;
+    }
+
+    .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin: 0 0 24px;
+    }
+
+    .contents-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    .content-item {
+      border: 1px solid var(--ink-faint);
+      border-radius: 8px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .content-item:hover {
+      background: var(--surface-2);
+      border-color: var(--amber);
+      transform: translateY(-2px);
+    }
+
+    .content-item-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+
+    .content-item-latin {
+      font-size: 0.75rem;
+      color: var(--ink-dim);
+      font-style: italic;
+      margin: 0 0 12px;
+    }
+
+    .content-item-desc {
+      font-size: 0.8rem;
+      color: var(--ink-dim);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .content-item-arrow {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--amber);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      .contents-grid {
+        grid-template-columns: 1fr;
+      }
+      header { padding: 20px; }
+      main { padding: 40px 20px; }
+      .contents-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-tag">Field Study</span>
+  <h2 class="header-title">Wildlife Encyclopedia</h2>
+</header>
+
+<main>
+  <h1 class="contents-title">Contents</h1>
+  
+  <p class="section-label">Available Studies</p>
+  
+  <div class="contents-grid">
+    <a href="BearWebsite.html" class="content-item">
+      <div class="content-item-title">Brown Bear</div>
+      <div class="content-item-latin">Ursus arctos</div>
+      <p class="content-item-desc">Large terrestrial carnivore native to northern Eurasia and North America.</p>
+      <span class="content-item-arrow">→ View Study</span>
+    </a>
+
+    <a href="polar_bear.html" class="content-item">
+      <div class="content-item-title">Polar Bear</div>
+      <div class="content-item-latin">Ursus maritimus</div>
+      <p class="content-item-desc">Arctic marine carnivore adapted to life on sea ice and extreme cold environments.</p>
+      <span class="content-item-arrow">→ View Study</span>
+    </a>
+
+    <a href="black_bear.html" class="content-item">
+      <div class="content-item-title">Black Bear</div>
+      <div class="content-item-latin">Ursus americanus</div>
+      <p class="content-item-desc">Medium-sized North American bear species common across diverse forest habitats.</p>
+      <span class="content-item-arrow">→ View Study</span>
+    </a>
+
+    <a href="panda.html" class="content-item">
+      <div class="content-item-title">Giant Panda</div>
+      <div class="content-item-latin">Ailuropoda melanoleuca</div>
+      <p class="content-item-desc">Iconic bear species endemic to China, primarily feeding on bamboo in mountain forests.</p>
+      <span class="content-item-arrow">→ View Study</span>
+    </a>
+
+    <a href="koala.html" class="content-item">
+      <div class="content-item-title">Koala</div>
+      <div class="content-item-latin">Phascolarctos cinereus</div>
+      <p class="content-item-desc">Eucalyptus-eating marsupial native to Australia, often mistaken for a bear.</p>
+      <span class="content-item-arrow">→ View Study</span>
+    </a>
+  </div>
+
+</main>
+
+</body>
+</html>
